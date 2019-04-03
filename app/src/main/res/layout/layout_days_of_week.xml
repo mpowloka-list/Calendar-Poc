@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="32dp">
+
+    <TextView
+            android:id="@+id/monday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M"
+            style="@style/MyWeekDay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tuesday"/>
+
+    <TextView
+            android:id="@+id/tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T"
+            style="@style/MyWeekDay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/monday"
+            app:layout_constraintEnd_toStartOf="@id/wednesday"/>
+
+    <TextView
+            android:id="@+id/wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="W"
+            style="@style/MyWeekDay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tuesday"
+            app:layout_constraintEnd_toStartOf="@id/thursday"/>
+
+    <TextView
+            android:id="@+id/thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T"
+            style="@style/MyWeekDay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/wednesday"
+            app:layout_constraintEnd_toStartOf="@id/friday"/>
+
+    <TextView
+            android:id="@+id/friday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F"
+            style="@style/MyWeekDay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/thursday"
+            app:layout_constraintEnd_toStartOf="@id/saturday"/>
+
+    <TextView
+            android:id="@+id/saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S"
+            style="@style/MyWeekDay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/friday"
+            app:layout_constraintEnd_toStartOf="@id/sunday"/>
+
+    <TextView
+            android:id="@+id/sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S"
+            style="@style/MyWeekDay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/saturday"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

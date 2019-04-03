@@ -27,11 +27,11 @@
             <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
+                    android:layout_height="50dp"
                     app:contentInsetStart="0dp"
                     app:contentInsetLeft="0dp"
 
-                    android:layout_marginBottom="?attr/actionBarSize"
+                    android:layout_marginBottom="100dp"
 
                     android:elevation="12dp"
                     app:layout_collapseMode="pin"
@@ -85,8 +85,11 @@
             </androidx.appcompat.widget.Toolbar>
 
             <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
+                    android:animateLayoutChanges="true"
 
                     app:layout_constraintTop_toBottomOf="@id/toolbar"
                     app:layout_constraintStart_toStartOf="parent"
@@ -96,21 +99,44 @@
 
                     app:cardElevation="8dp">
 
+                <include
+                        android:id="@+id/days_of_week"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="66dp"
+                        layout="@layout/layout_days_of_week" />
+
                 <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                        android:id="@+id/calendarView"
+                        android:id="@+id/calendarViewMonth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:layout_marginTop="?attr/actionBarSize"
+                        android:layout_marginTop="96dp"
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
 
-                        app:mcv_tileSize="match_parent"
+                        app:mcv_calendarMode="month"
 
                         app:mcv_dateTextAppearance="@style/MyDate"
                         app:mcv_weekDayTextAppearance="@style/MyWeekDay"
-                        app:mcv_firstDayOfWeek="monday"
-                />
+                        app:mcv_firstDayOfWeek="monday"/>
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                        android:id="@+id/calendarViewWeek"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="50dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+
+                        app:mcv_calendarMode="week"
+                        android:layout_marginBottom="24dp"
+
+                        app:mcv_dateTextAppearance="@style/MyDate"
+                        app:mcv_weekDayTextAppearance="@style/MyWeekDay"
+                        app:mcv_firstDayOfWeek="monday"/>
+
             </androidx.cardview.widget.CardView>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -131,6 +157,7 @@
                 android:orientation="vertical">
 
             <ImageView
+                    android:id="@+id/fab"
                     android:layout_margin="16dp"
                     android:layout_width="match_parent"
                     android:background="@color/colorAccent"

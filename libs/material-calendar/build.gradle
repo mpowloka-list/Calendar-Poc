@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+
+    versionCode 1
+    versionName ""
+
+    vectorDrawables.useSupportLibrary = true
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+group = "com.github.prolificinteractive"
+version = android.defaultConfig.versionName
+archivesBaseName = 'material-calendarview'
+
+dependencies {
+
+    def supportVersion = '27.0.2'
+
+  implementation rootProject.ext.threeTenAbp
+  implementation rootProject.ext.supportV4
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha03'
+    implementation 'androidx.annotation:annotation:1.0.0'
+  implementation rootProject.ext.supportAnnotations
+
+  rootProject.ext.testDep.each { testImplementation it }
+  rootProject.ext.androidTestDep.each { androidTestImplementation it }
+}
