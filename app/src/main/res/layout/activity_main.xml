@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:minHeight="200dp"
+
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:contentScrim="?attr/colorPrimary"
+                android:fitsSystemWindows="true">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetLeft="0dp"
+
+                    android:layout_marginBottom="?attr/actionBarSize"
+
+                    android:elevation="12dp"
+                    app:layout_collapseMode="pin"
+                    android:background="@drawable/toolbar_gradient"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:id="@+id/month_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:translationX="-40dp"
+
+                            android:text="@string/january"
+                            android:textAllCaps="true"
+                            android:textColor="#fff"
+                            android:textStyle="bold"
+
+                            app:layout_constraintVertical_chainStyle="packed"
+
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/week_tv"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                            android:id="@+id/week_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:translationX="-40dp"
+
+                            android:text="@string/week_15"
+                            android:textColor="#fff"
+                            android:textStyle="bold"
+
+                            app:layout_constraintTop_toBottomOf="@id/month_tv"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintTop_toBottomOf="@id/toolbar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_collapseMode="none"
+
+                    app:cardElevation="8dp">
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                        android:id="@+id/calendarView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+
+                        app:mcv_tileSize="match_parent"
+
+                        app:mcv_dateTextAppearance="@style/MyDate"
+                        app:mcv_weekDayTextAppearance="@style/MyWeekDay"
+                        app:mcv_firstDayOfWeek="monday"
+                />
+            </androidx.cardview.widget.CardView>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:background="@color/design_default_color_primary"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <ImageView
+                    android:layout_margin="16dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorAccent"
+                    android:layout_height="300dp"/>
+
+            <ImageView
+                    android:layout_margin="16dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorAccent"
+                    android:layout_height="300dp"/>
+
+            <ImageView
+                    android:layout_margin="16dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorAccent"
+                    android:layout_height="300dp"/>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/app_bar_layout"
+            app:layout_anchorGravity="bottom|right|end"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

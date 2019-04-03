@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ProlificCalendar</string>
+
+    <string name="january">January</string>
+    <string name="week_15">(Week 15)</string>
+</resources>

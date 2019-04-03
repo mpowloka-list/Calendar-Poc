@@ -1,0 +1,2 @@
+include ':app', ':material-calendar'
+project(':material-calendar').projectDir = new File('libs/material-calendar')
